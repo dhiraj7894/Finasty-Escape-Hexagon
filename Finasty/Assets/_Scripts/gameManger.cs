@@ -13,19 +13,25 @@ public class gameManger : MonoBehaviour
     public Text endScoreText;
     public float sScore;
     public float sTime;
+    public Text timerText;
+    public Text score;
+    public float incrementValue;
+
 
     Spwaner spa = new Spwaner();
     Hexagon hex = new Hexagon();
 
     public void Start()
     {
-        sScore = 0f;
+        sScore = 1f;
         sTime = Time.time;
-        spa.spawnRate = 1f;
-        hex.shrinkSpeed = 1f;
+        spa.spawnRate = 0f;
+        hex.shrinkSpeed = 0f;
         endLev.SetActive(false);
         endTimerText.text = sTime.ToString("f2");
     }
+
+
   
     public void endGame() {
         if (gameEnd == false) {
@@ -34,15 +40,23 @@ public class gameManger : MonoBehaviour
         }
 
     }
-    private void Update()
+    public void Update()
     {
-        sScore = sScore + 1f;
+        sScore = incrementValue * Time.timeSinceLevelLoad;
+        string Sc = sScore.ToString("f0");
+        float t = Time.time - sTime;
+        string sC = sScore.ToString();
+        string min = ((int)t / 60).ToString();
+        string sec = (t % 60).ToString("f2");
+
+        timerText.text = "Timer\n" + min + ":" + sec;
+        score.text = "Score\n" + Sc;
     }
 
     private void Restart()
     {
-        spa.spawnRate = 1f;
-        hex.shrinkSpeed = 1f;
+        spa.spawnRate = 0f;
+        hex.shrinkSpeed = 0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Out() {
@@ -60,8 +74,8 @@ public class gameManger : MonoBehaviour
         endTimerText.text = "Time = "+min + ":" + sec;
 
         
-        string sC = sScore.ToString();
-        endScoreText.text = "Score = " + sScore;
+        string sC = sScore.ToString("f0");
+        endScoreText.text = "Score = " + sC;
 
     }
     public void buttonClick()
@@ -71,11 +85,11 @@ public class gameManger : MonoBehaviour
 
     public void loadLevel()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene("_Game");
     }
     public void homeClick()
     {
-        SceneManager.LoadScene("main_menu");  
+        SceneManager.LoadScene("_mainMenu");  
     }
 
 }

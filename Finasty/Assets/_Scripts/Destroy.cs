@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Destroy : MonoBehaviour
 {
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         FindObjectOfType<gameManger>().Out();
+        
     }
 }

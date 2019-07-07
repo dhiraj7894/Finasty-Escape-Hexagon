@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class Hexagon : MonoBehaviour
 {
+    
     public Rigidbody2D rb;
     public float shrinkSpeed;
-
+    public gameManger gM;
 
     // Start is called before the first frame update
     public void Start()
@@ -20,8 +21,7 @@ public class Hexagon : MonoBehaviour
     // Update is called once per frame
    public void Update()
     {
-        shrinkSpeed = shrinkSpeed + 0.01f;
-
+        shrinkSpeed = shrinkSpeed + 0.005f;
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
         if (transform.localScale.x < 0.05f) {
             Destroy(gameObject);

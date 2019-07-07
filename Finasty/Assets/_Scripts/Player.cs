@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             touch = true;
             ptB = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         }
-        else {
+        else {  
             touch = false;
         }
     }
