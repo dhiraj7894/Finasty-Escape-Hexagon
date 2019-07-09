@@ -8,6 +8,7 @@ public class gameManger : MonoBehaviour
 {
     bool gameEnd = false;
     public GameObject endLev;
+    public GameObject image;
 
     public Text endTimerText;
     public Text endScoreText;
@@ -29,6 +30,7 @@ public class gameManger : MonoBehaviour
         hex.shrinkSpeed = 0f;
         endLev.SetActive(false);
         endTimerText.text = sTime.ToString("f2");
+        image.SetActive(true);
     }
 
 
@@ -51,6 +53,7 @@ public class gameManger : MonoBehaviour
 
         timerText.text = "Timer\n" + min + ":" + sec;
         score.text = "Score\n" + Sc;
+        
     }
 
     private void Restart()
@@ -63,6 +66,7 @@ public class gameManger : MonoBehaviour
         foreach (Transform tr in endLev.transform.parent)
         {
             tr.gameObject.SetActive(false);
+            
         }
         endLev.SetActive(true);
         FindObjectOfType<Spwaner>().stop();
@@ -78,22 +82,9 @@ public class gameManger : MonoBehaviour
         endScoreText.text = "Score = " + sC;
 
     }
-    public void buttonClick()
-    {
-        FindObjectOfType<gameManger>().endGame();
+    public void activateImage() {
+        image.SetActive(true);
     }
-
-    public void loadNewLevel()
-    {
-        SceneManager.LoadScene("_Game");
-    }
-    public void homeButtonClick()
-    {
-        SceneManager.LoadScene("_mainMenu");  
-    }
-    public void highScoreButtonClick()
-    {
-        SceneManager.LoadScene("_highScore");
-    }
+    
 }
 

@@ -24,7 +24,7 @@ PlayerSettings:
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
-  m_SplashScreenLogoAnimationZoom: 0.54
+  m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
   m_SplashScreenBackgroundPortraitAspect: 1
   m_SplashScreenBackgroundLandscapeUvs:
@@ -40,7 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 5e1898b5fc7e0804596dd257517473af, type: 3}
+  - logo: {fileID: 21300000, guid: 806ddf6e88a99834c81eace9707242a7, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 84516b4bccf8ea743bc5c95301daeda5, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -258,7 +260,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 7
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Unity_Game_Texture/_unityProject/Finasty/Finasty_apk.keystore
+  AndroidKeystoreName: '{inproject}: Assets/_keystore/Finasty_apk.keystore'
   AndroidKeyaliasName: escapehexagon
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
