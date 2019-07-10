@@ -17,6 +17,7 @@ public class gameManger : MonoBehaviour
     public Text timerText;
     public Text score;
     public float incrementValue;
+    public Text highScore;
 
 
     Spwaner spa = new Spwaner();
@@ -31,6 +32,7 @@ public class gameManger : MonoBehaviour
         endLev.SetActive(false);
         endTimerText.text = sTime.ToString("f2");
         image.SetActive(true);
+        highScore.text = "High Score : "+((int)PlayerPrefs.GetFloat("HighScore")).ToString();
     }
 
 
@@ -71,7 +73,13 @@ public class gameManger : MonoBehaviour
         endLev.SetActive(true);
         FindObjectOfType<Spwaner>().stop();
         FindObjectOfType<Player>().stp();
-
+        //HighScore
+        if (sScore > PlayerPrefs.GetFloat("HighScore", 0))
+        {
+            PlayerPrefs.SetFloat("HighScore", sScore);
+            highScore.text =  "High Score : "+sScore.ToString("f0");
+        }
+        //Highscore-end
         float t = Time.time - sTime;
         string min = ((int)t / 60).ToString();
         string sec = (t % 60).ToString("f2");

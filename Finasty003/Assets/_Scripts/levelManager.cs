@@ -81,4 +81,10 @@ public class levelManager : MonoBehaviour
         StartCoroutine(learn());
     }
 
+    //exit
+    public void quitButton()
+    {
+        Application.Quit();
+    }
+
 }
