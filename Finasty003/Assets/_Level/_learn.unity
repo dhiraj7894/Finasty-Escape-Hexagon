@@ -664,10 +664,11 @@ AudioSource:
   m_GameObject: {fileID: 1050655503}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2efc61e7515c0d3438d785dc30c80dbd,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 7a87fc3daf94c334c8150e83ffc5bb8e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.55
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -876,6 +877,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trasnitionAnim: {fileID: 1127876125}
   trasnitionAnim2: {fileID: 1127876125}
+  setting: {fileID: 0}
+  support: {fileID: 0}
+  qrImg: {fileID: 0}
+  credit: {fileID: 0}
 --- !u!4 &1198524611
 Transform:
   m_ObjectHideFlags: 0

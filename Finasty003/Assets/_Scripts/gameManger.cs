@@ -16,7 +16,7 @@ public class gameManger : MonoBehaviour
     public float sTime;
     public Text timerText;
     public Text score;
-    public float incrementValue;
+    //public float incrementValue;
     public Text highScore;
 
 
@@ -25,7 +25,7 @@ public class gameManger : MonoBehaviour
 
     public void Start()
     {
-        sScore = 1f;
+        //sScore = 0f;
         sTime = Time.time;
         spa.spawnRate = 0f;
         hex.shrinkSpeed = 0f;
@@ -46,7 +46,7 @@ public class gameManger : MonoBehaviour
     }
     public void Update()
     {
-        sScore = incrementValue * Time.timeSinceLevelLoad;
+        //sScore = incrementValue * Time.timeSinceLevelLoad;
         string Sc = sScore.ToString("f0");
         float t = Time.time - sTime;
         string sC = sScore.ToString();
@@ -56,6 +56,10 @@ public class gameManger : MonoBehaviour
         timerText.text = "Timer\n" + min + ":" + sec;
         score.text = "Score\n" + Sc;
         
+    }
+    public void scoreInc()
+    {
+        sScore = sScore + 1f;
     }
 
     private void Restart()
@@ -93,6 +97,6 @@ public class gameManger : MonoBehaviour
     public void activateImage() {
         image.SetActive(true);
     }
-    
+
 }
 

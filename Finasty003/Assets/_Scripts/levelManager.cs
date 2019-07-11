@@ -8,10 +8,37 @@ public class levelManager : MonoBehaviour
 {
     public Animator trasnitionAnim;
     public Animator trasnitionAnim2;
+    public GameObject setting;
+    public GameObject support;
+    public GameObject qrImg;
+    public GameObject credit;
 
+    public void Start()
+    {
+        support.SetActive(false);
+        setting.SetActive(false);
+        qrImg.SetActive(false);
+        credit.SetActive(false);
+    }
 
+    public void settingClick()
+    {
+        setting.SetActive(true);
+    }
 
+    public void supportClick()
+    {
+        support.SetActive(true);
+    }
 
+    public void qrImgClick()
+    {
+        qrImg.SetActive(true);
+    }
+    public void creditClick()
+    {
+        credit.SetActive(true);
+    }
 
     //LoadNewLevel
     IEnumerator LoadScene()
