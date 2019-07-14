@@ -13,7 +13,10 @@ public class Player : MonoBehaviour
 
     public Transform bg;
     public Transform ply;
-
+    private void Start()
+    {
+        AdManager.instance.RequestBanner();
+    }
     void Update()
     {
         transform.Rotate(Vector3.forward, Time.deltaTime * speedTime);

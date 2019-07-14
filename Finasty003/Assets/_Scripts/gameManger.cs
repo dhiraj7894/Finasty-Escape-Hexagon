@@ -74,6 +74,7 @@ public class gameManger : MonoBehaviour
             tr.gameObject.SetActive(false);
             
         }
+        AdManager.instance.RequestVideo();
         endLev.SetActive(true);
         FindObjectOfType<Spwaner>().stop();
         FindObjectOfType<Player>().stp();
