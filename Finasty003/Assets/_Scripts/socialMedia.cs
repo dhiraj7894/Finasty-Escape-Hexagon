@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class socialMedia : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private void Start()
+    {
+        FindObjectOfType<AdManager>().HideBanner();
+        FindObjectOfType<AdManager>().RequestVideo();
+    }
+
     public void openFB()
     {
 

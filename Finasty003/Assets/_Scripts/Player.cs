@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public Transform ply;
     private void Start()
     {
-        //AdManager.instance.RequestBanner();
+        FindObjectOfType<AdManager>().RequestBanner();
     }
     void Update()
     {
