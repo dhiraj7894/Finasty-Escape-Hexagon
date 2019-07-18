@@ -170,6 +170,7 @@ MonoBehaviour:
   rb: {fileID: 50133601772650818}
   shrinkSpeed: 1
   gM: {fileID: 0}
+  Score: 0
 --- !u!50 &50133601772650818
 Rigidbody2D:
   serializedVersion: 4

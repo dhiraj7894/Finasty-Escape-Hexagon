@@ -23,13 +23,11 @@ public class levelManager : MonoBehaviour
 
     public void settingClick()
     {
-        AdManager.instance.RequestVideo();
         setting.SetActive(true);
     }
 
     public void supportClick()
     {
-        AdManager.instance.RequestVideo();
         support.SetActive(true);
     }
 
@@ -39,7 +37,6 @@ public class levelManager : MonoBehaviour
     }
     public void creditClick()
     {
-         AdManager.instance.RequestVideo();
         credit.SetActive(true);
     }
 
@@ -59,8 +56,6 @@ public class levelManager : MonoBehaviour
     //HomeButtonClick
     IEnumerator homeBtn()
     {
-        AdManager.instance.RequestVideo();
-        AdManager.instance.HideBanner();
         trasnitionAnim2.SetTrigger("end");
         trasnitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(1.5f);
@@ -68,7 +63,6 @@ public class levelManager : MonoBehaviour
     }
     public void homeButtonClick()
     {
-        AdManager.instance.RequestVideo();
         StartCoroutine(homeBtn());
     }
 

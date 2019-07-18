@@ -10,8 +10,13 @@ public class AdManager : MonoBehaviour
     private BannerView bannerView;
     private InterstitialAd video;
      private string appID = "ca-app-pub-7362258985735994~2376665647";
-     private string bannerID = "ca-app-pub-3940256099942544/6300978111";
-     private string videoID = "ca-app-pub-3940256099942544/1033173712";
+    //originalID
+     private string bannerID = "ca-app-pub-7362258985735994/2572417825";
+     private string videoID = "ca-app-pub-7362258985735994/1499009304";
+
+    //Test Purpose
+        //private string bannerID = "ca-app-pub-3940256099942544/6300978111";
+        //private string videoID = "ca-app-pub-3940256099942544/1033173712";
 
     private void Awake()
     {
@@ -23,7 +28,6 @@ public class AdManager : MonoBehaviour
         {
             Destroy(this);
         }
-        //MobileAds.Initialize(appID);
     }
     private void Start()
     {
@@ -39,6 +43,9 @@ public class AdManager : MonoBehaviour
     }
     public void HideBanner()
     {
+        bannerView = new BannerView(bannerID, AdSize.Banner, AdPosition.Bottom);
+        AdRequest request = new AdRequest.Builder().Build();
+        bannerView.LoadAd(request);
         bannerView.Hide();
     }
     public void RequestVideo()
@@ -46,7 +53,7 @@ public class AdManager : MonoBehaviour
         video = new InterstitialAd(videoID);
         AdRequest request = new AdRequest.Builder().Build();
         video.LoadAd(request);
-        ShowVideo();
+        video.Show();
     }
     public void ShowVideo()
     {
