@@ -7,7 +7,7 @@ public class socialMedia : MonoBehaviour
     private void Start()
     {
         FindObjectOfType<AdManager>().HideBanner();
-        FindObjectOfType<AdManager>().RequestVideo();
+        FindObjectOfType<AdManager>().ShowVideo();
     }
 
     public void openFB()
