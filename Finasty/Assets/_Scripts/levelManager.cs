@@ -8,51 +8,43 @@ public class levelManager : MonoBehaviour
 {
     public Animator trasnitionAnim;
     public Animator trasnitionAnim2;
-    public GameObject setting;
-    public GameObject support;
-    public GameObject qrImg;
-    public GameObject credit;
-
-    public void Start()
-    {
-        support.SetActive(false);
-        setting.SetActive(false);
-        qrImg.SetActive(false);
-        credit.SetActive(false);
-    }
-
-    public void settingClick()
-    {
-        setting.SetActive(true);
-    }
-
-    public void supportClick()
-    {
-        support.SetActive(true);
-    }
-
-    public void qrImgClick()
-    {
-        qrImg.SetActive(true);
-    }
-    public void creditClick()
-    {
-        credit.SetActive(true);
-    }
-
-    //LoadNewLevel
+    //LoadNewLevel_1
     IEnumerator LoadScene()
     {
         
         trasnitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("_Game");
+        SceneManager.LoadScene("level_low");
     }
-    public void loadNewLevel()
+    public void loadNewLevel_1()
     {
         StartCoroutine(LoadScene());
     }
+    //LoadNewLevel_2
+    IEnumerator LoadScene_2()
+    {
 
+        trasnitionAnim.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("level_mid");
+    }
+    public void loadNewLevel_2()
+    {
+        StartCoroutine(LoadScene_2());
+    }
+
+    //LoadNewLevel_1
+    IEnumerator LoadScene_3()
+    {
+
+        trasnitionAnim.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("level_high");
+    }
+    public void loadNewLevel_3()
+    {
+        StartCoroutine(LoadScene_3());
+    }
     //HomeButtonClick
     IEnumerator homeBtn()
     {
@@ -67,19 +59,33 @@ public class levelManager : MonoBehaviour
     }
 
 
-
+    //Restart at Low
+    public void lowClickRestart()
+    {
+        FindObjectOfType<GameManager_Low>().endGame();
+    }
+    //Restart at Mid
+    public void midClickRestart()
+    {
+        FindObjectOfType<GameManager_Mid>().endGame();
+    }
+    //Restart at high
+    public void highClickRestart()
+    {
+        FindObjectOfType<GameManager_High>().endGame();
+    }
     //buttonClick
-    IEnumerator buttonClickd()
+   /* IEnumerator buttonClickd()
     {
 
         trasnitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
-        FindObjectOfType<gameManger>().endGame();
+        
     }
     public void buttonClick()
     {
         StartCoroutine(buttonClickd());
-    }
+    }*/
 
     //HighScore
 
@@ -114,5 +120,8 @@ public class levelManager : MonoBehaviour
        
         Application.Quit();
     }
-
+    public void resetClick() {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Deleted all data Stored");
+    }
 }
