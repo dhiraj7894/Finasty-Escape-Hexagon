@@ -75,7 +75,7 @@ public class levelManager : MonoBehaviour
         FindObjectOfType<GameManager_High>().endGame();
     }
     //buttonClick
-   /* IEnumerator buttonClickd()
+   /*IEnumerator buttonClickd()
     {
 
         trasnitionAnim.SetTrigger("end");
@@ -117,7 +117,6 @@ public class levelManager : MonoBehaviour
     //exit
     public void quitButton()
     {
-       
         Application.Quit();
     }
     public void resetClick() {
