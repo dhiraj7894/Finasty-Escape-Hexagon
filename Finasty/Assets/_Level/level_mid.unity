@@ -505,7 +505,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   bloomThreshold:
-    minValue: 0.37340903
+    minValue: 0.33
     maxValue: 10
   bloomScattering: 5.65
   bloomIntensity: 1
@@ -2445,7 +2445,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
-  - {fileID: 2100000, guid: 84dc5351c6db94f46abc7cc1330c7a05, type: 3}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6389,7 +6389,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0.4
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
@@ -6405,7 +6405,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.2953008, g: 0.7924528, b: 0.32573867, a: 1}
+      maxColor: {r: 0.3066038, g: 1, b: 0.35028228, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
