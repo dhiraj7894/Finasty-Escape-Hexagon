@@ -12,8 +12,8 @@ public class levelManager : MonoBehaviour
     IEnumerator LoadScene()
     {
         
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("level_low");
     }
     public void loadNewLevel_1()
@@ -24,8 +24,8 @@ public class levelManager : MonoBehaviour
     IEnumerator LoadScene_2()
     {
 
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("level_mid");
     }
     public void loadNewLevel_2()
@@ -37,8 +37,8 @@ public class levelManager : MonoBehaviour
     IEnumerator LoadScene_3()
     {
 
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("level_high");
     }
     public void loadNewLevel_3()
@@ -48,9 +48,10 @@ public class levelManager : MonoBehaviour
     //HomeButtonClick
     IEnumerator homeBtn()
     {
-        trasnitionAnim2.SetTrigger("end");
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
+        trasnitionAnim2.SetTrigger("FadeOut");
+       // yield return new WaitForSeconds(0.5f);
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("_mainMenu");
     }
     public void homeButtonClick()
@@ -74,26 +75,14 @@ public class levelManager : MonoBehaviour
     {
         FindObjectOfType<GameManager_High>().endGame();
     }
-    //buttonClick
-   /*IEnumerator buttonClickd()
-    {
-
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(0.5f);
-        
-    }
-    public void buttonClick()
-    {
-        StartCoroutine(buttonClickd());
-    }*/
-
+ 
     //HighScore
 
     IEnumerator highScore()
     {
 
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("_highScore");
     }
     public void highScoreButtonClick()
@@ -105,13 +94,27 @@ public class levelManager : MonoBehaviour
     IEnumerator learn()
     {
 
-        trasnitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("_learn");
     }
     public void learnButtonClick()
     {
         StartCoroutine(learn());
+    }
+
+    //Open Bonus
+    //learn
+    IEnumerator bonus()
+    {
+
+        trasnitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("_bonusLevel");
+    }
+    public void BonusButtonClick()
+    {
+        StartCoroutine(bonus());
     }
 
     //exit
