@@ -14,14 +14,14 @@ public class levelManager : MonoBehaviour
         
         trasnitionAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("level_low");
+        SceneManager.LoadScene("Game");
     }
     public void loadNewLevel_1()
     {
         StartCoroutine(LoadScene());
     }
     //LoadNewLevel_2
-    IEnumerator LoadScene_2()
+    /*IEnumerator LoadScene_2()
     {
 
         trasnitionAnim.SetTrigger("FadeOut");
@@ -31,10 +31,10 @@ public class levelManager : MonoBehaviour
     public void loadNewLevel_2()
     {
         StartCoroutine(LoadScene_2());
-    }
+    }*/
 
     //LoadNewLevel_1
-    IEnumerator LoadScene_3()
+   /* IEnumerator LoadScene_3()
     {
 
         trasnitionAnim.SetTrigger("FadeOut");
@@ -44,7 +44,7 @@ public class levelManager : MonoBehaviour
     public void loadNewLevel_3()
     {
         StartCoroutine(LoadScene_3());
-    }
+    }*/
     //HomeButtonClick
     IEnumerator homeBtn()
     {
@@ -66,7 +66,7 @@ public class levelManager : MonoBehaviour
         FindObjectOfType<GameManager_Low>().endGame();
     }
     //Restart at Mid
-    public void midClickRestart()
+    /*public void midClickRestart()
     {
         FindObjectOfType<GameManager_Mid>().endGame();
     }
@@ -74,11 +74,11 @@ public class levelManager : MonoBehaviour
     public void highClickRestart()
     {
         FindObjectOfType<GameManager_High>().endGame();
-    }
+    }*/
  
     //HighScore
 
-    IEnumerator highScore()
+   /* IEnumerator highScore()
     {
 
         trasnitionAnim.SetTrigger("FadeOut");
@@ -88,10 +88,10 @@ public class levelManager : MonoBehaviour
     public void highScoreButtonClick()
     {
         StartCoroutine(highScore());
-    }
+    }*/
 
     //learn
-    IEnumerator learn()
+   /* IEnumerator learn()
     {
 
         trasnitionAnim.SetTrigger("FadeOut");
@@ -101,7 +101,7 @@ public class levelManager : MonoBehaviour
     public void learnButtonClick()
     {
         StartCoroutine(learn());
-    }
+    }*/
 
     //Open Bonus
     //learn

@@ -21,7 +21,7 @@ public class GameManager_Low : MonoBehaviour
 
 
     Spwaner spa = new Spwaner();
-    Hexagon_low hex = new Hexagon_low();
+    _Hexagon hex = new _Hexagon();
 
     public void Start()
     {
@@ -55,8 +55,8 @@ public class GameManager_Low : MonoBehaviour
         string min = ((int)t / 60).ToString();
         string sec = (t % 60).ToString("f2");
 
-        timerText.text = "Timer\n" + min + ":" + sec;
-        score.text = "Score\n" + Sc;
+        timerText.text = min + ":" + sec;
+        score.text = Sc;
 
     }
     public void scoreInc()
@@ -78,22 +78,28 @@ public class GameManager_Low : MonoBehaviour
 
         }
         endLev.SetActive(true);
-        FindObjectOfType<Spwaner>().stop();
+        FindObjectOfType<Spawner_1>().stop();
         FindObjectOfType<playerCrossWord>().stp();
+
         //HighScore
         if (sScore_Low > PlayerPrefs.GetFloat("HighScore_Low", 0))
         {
             PlayerPrefs.SetFloat("HighScore_Low", sScore_Low);
             highScore.text = "High Score : " + sScore_Low.ToString("f0");
         }
+
         //Highscore-end
         float t = Time.time - sTime;
+
         string min = ((int)t / 60).ToString();
+
         string sec = (t % 60).ToString("f2");
+
         endTimerText.text = "Time = " + min + ":" + sec;
 
 
         string sC = sScore_Low.ToString("f0");
+
         endScoreText.text = "Score = " + sC;
 
     }

@@ -8,7 +8,7 @@ public class Hexagon_low : MonoBehaviour
 {
     
     public Rigidbody2D rb;
-    public float shrinkSpeed;
+    public float shrinkSpeed = 1f;
     public GameManager_Low gM;
     public float Score;
 
@@ -23,10 +23,10 @@ public class Hexagon_low : MonoBehaviour
     // Update is called once per frame
    public void Update()
     {
-        shrinkSpeed = shrinkSpeed + 0.005f;
+        shrinkSpeed = shrinkSpeed + (1f/1000f);
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
         if (transform.localScale.x < 0.05f) {
-            FindObjectOfType<GameManager_Low>().scoreInc();
+            //FindObjectOfType<GameManager_Low>().scoreInc();
             Destroy(gameObject);
         }
         
