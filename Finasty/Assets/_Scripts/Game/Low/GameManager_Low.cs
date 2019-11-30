@@ -14,10 +14,11 @@ public class GameManager_Low : MonoBehaviour
     public Text endScoreText;
     public float sScore_Low;
     public float sTime;
+    public float a;
     public Text timerText;
     public Text score;
-    //public float incrementValue;
     public Text highScore;
+
 
 
     Spwaner spa = new Spwaner();
@@ -25,7 +26,6 @@ public class GameManager_Low : MonoBehaviour
 
     public void Start()
     {
-        //sScore = 0f;
         sTime = Time.time;
         spa.spawnRate = 0f;
         hex.shrinkSpeed = 0f;
@@ -48,7 +48,6 @@ public class GameManager_Low : MonoBehaviour
     }
     public void Update()
     {
-        //sScore = incrementValue * Time.timeSinceLevelLoad;
         string Sc = sScore_Low.ToString("f0");
         float t = Time.time - sTime;
         string sC = sScore_Low.ToString();
@@ -61,7 +60,9 @@ public class GameManager_Low : MonoBehaviour
     }
     public void scoreInc()
     {
-        sScore_Low = sScore_Low + 1f;
+        sScore_Low = sScore_Low + 2f;
+        a = a + 2f;
+
     }
 
     private void Restart()

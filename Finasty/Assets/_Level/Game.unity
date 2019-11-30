@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408557516}
   - component: {fileID: 408557515}
+  - component: {fileID: 408557517}
   m_Layer: 0
   m_Name: _BackGround
   m_TagString: Untagged
@@ -363,8 +364,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Sprite: {fileID: 21300000, guid: c735d3eb2656da34bb7f793ea68d1680, type: 3}
+  m_Color: {r: 0.7270624, g: 1, b: 0.4481132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -383,11 +384,30 @@ Transform:
   m_GameObject: {fileID: 408557514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.002, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 0}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &408557517
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408557514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98cb12c78b6514a46989708e2acf1c20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &518376475
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,11 +904,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560654770}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 2efc61e7515c0d3438d785dc30c80dbd,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9d26da76314c0054084bca83a2679199, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 596e67615220444469ee7f890b4f319d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6269,6 +6289,7 @@ MonoBehaviour:
   endScoreText: {fileID: 1892609884}
   sScore_Low: 0
   sTime: 0
+  a: 0
   timerText: {fileID: 525896332}
   score: {fileID: 1437161399}
   highScore: {fileID: 1431176481}
@@ -7280,7 +7301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2092525561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7452,7 +7473,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.48417664
+        value: 0.27861786
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -7460,14 +7481,14 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.10862869
-        value: 0.5276127
-        inSlope: 0
-        outSlope: 0
+        time: 0.269033
+        value: 0.4942758
+        inSlope: 0.6932047
+        outSlope: 0.6932047
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.19049965
       - serializedVersion: 3
         time: 1
         value: 0
