@@ -8,16 +8,9 @@ public class GameManager_Low : MonoBehaviour
 {
     bool gameEnd = false;
     public GameObject endLev;
-    public GameObject image;
 
-    public Text endTimerText;
-    public Text endScoreText;
-    public float sScore_Low;
-    public float sTime;
-    public float a;
-    public Text timerText;
-    public Text score;
-    public Text highScore;
+    public Text endTimerText, endScoreText, timerText, score, highScore;
+    public float sScore_Low, sTime, a;
 
 
 
@@ -31,7 +24,7 @@ public class GameManager_Low : MonoBehaviour
         hex.shrinkSpeed = 0f;
         endLev.SetActive(false);
         endTimerText.text = sTime.ToString("f0");
-        image.SetActive(true);
+        //image.SetActive(true);
         highScore.text = "High Score : " + ((int)PlayerPrefs.GetFloat("HighScore_Low")).ToString();
     }
 
@@ -104,8 +97,8 @@ public class GameManager_Low : MonoBehaviour
         endScoreText.text = "Score = " + sC;
 
     }
-    public void activateImage()
+    /*public void activateImage()
     {
         image.SetActive(true);
-    }
+    }*/
 }

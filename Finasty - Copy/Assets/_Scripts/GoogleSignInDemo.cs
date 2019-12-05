@@ -51,7 +51,7 @@ public class GoogleSignInDemo : MonoBehaviour
         AddToInformation("Calling SignIn");
 
         GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
-        FindObjectOfType<levelManager>().homeButtonClick();
+        FindObjectOfType<levelManager>().startClick();
     }
 
     private void OnSignOut()

@@ -7,12 +7,18 @@ public class Spawner_1 : MonoBehaviour
 {
     int whatToSpwan;
     public float spwanRate = 0.5f;
-    public GameObject hexagon1, hexagon2, hexagon3, hexagon4, hexagon5, hexagon6;
+    public GameObject hexagon1, hexagon2, hexagon3, hexagon4, hexagon5, hexagon6, _hun;
     float nextTimeToSpawn = 0f;
-    public float timer = 0.5f;
+    public float timer = 0.5f,t;
 
-    void Update()
+    GameManager_Low gML = new GameManager_Low();
+    private void Start()
     {
+        spwanRate = 0.5f;
+        
+    }
+    void Update()
+    { 
         timer = timer + (1f / 25000f);
         spwanRate = (spwanRate + (1f/80000f));
         //Debug.Log(timer);

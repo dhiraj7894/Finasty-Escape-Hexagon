@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class UIopener : MonoBehaviour
 {
-    public GameObject setting;
-    public GameObject support;
-    public GameObject qrImg;
-    public GameObject credit;
-    public GameObject LevOpen;
-    public GameObject errorForDeleted;
+    public GameObject setting, support, qrImg, credit, errorForDeleted;
 
     public void Start()
     {
         errorForDeleted.SetActive(false);
-        LevOpen.SetActive(false);
+        //LevOpen.SetActive(false);
         support.SetActive(false);
         setting.SetActive(false);
         qrImg.SetActive(false);
@@ -26,10 +21,10 @@ public class UIopener : MonoBehaviour
         setting.SetActive(true);
     }
 
-    public void LevOpenClick()
+    /*public void LevOpenClick()
     {
         LevOpen.SetActive(true);
-    }
+    }*/
     public void supportClick()
     {
         support.SetActive(true);

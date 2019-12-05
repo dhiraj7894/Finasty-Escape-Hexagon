@@ -1,15 +1,47 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class levelManager : MonoBehaviour
 {
-    public Animator trasnitionAnim;
-    public Animator trasnitionAnim2;
+    //public Animator trasnitionAnim, trasnitionAnim2;
+    public GameObject _Manu, _Player, _GameLevel;
+
+    public void Start()
+    {
+        _Manu.SetActive(true);
+        _Player.SetActive(false);
+        _GameLevel.SetActive(false);
+    }
+    //Restart the Game
+    public void lowClickRestart()
+    {
+        FindObjectOfType<GameManager_Low>().endGame();
+    }
+    //Quit from the game
+    public void quitButton()
+    {
+        Application.Quit();
+    }
+
+    //Delete all the local data you have stored.
+    public void resetClick()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+    public void startClick()
+    {
+        _Manu.SetActive(false);
+        _Player.SetActive(true);
+        _GameLevel.SetActive(true);
+    }
+
+    /*
     //LoadNewLevel_1
     IEnumerator LoadScene()
     {
-        
+
         trasnitionAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Game");
@@ -18,7 +50,7 @@ public class levelManager : MonoBehaviour
     {
         StartCoroutine(LoadScene());
     }
-    
+
     IEnumerator homeBtn()
     {
         trasnitionAnim2.SetTrigger("FadeOut");
@@ -33,11 +65,7 @@ public class levelManager : MonoBehaviour
     }
 
 
-    //Restart at Low
-    public void lowClickRestart()
-    {
-        FindObjectOfType<GameManager_Low>().endGame();
-    }   
+  }   
     IEnumerator bonus()
     {
 
@@ -48,15 +76,8 @@ public class levelManager : MonoBehaviour
     public void BonusButtonClick()
     {
         StartCoroutine(bonus());
-    }
+    }*/
 
     //exit
-    public void quitButton()
-    {
-        Application.Quit();
-    }
-    public void resetClick() {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("Deleted all data Stored");
-    }
+
 }

@@ -10,6 +10,7 @@ public class AdManager : MonoBehaviour
     public BannerView bannerView;
     public InterstitialAd video;
      private string appID = "ca-app-pub-7362258985735994~2376665647";
+
     //originalID
      //private string bannerID = "ca-app-pub-7362258985735994/2572417825";
      //private string videoID = "ca-app-pub-7362258985735994/1499009304";

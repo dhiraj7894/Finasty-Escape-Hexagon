@@ -7,32 +7,18 @@ using UnityEngine.UI;
 public class GameManager_Low : MonoBehaviour
 {
     bool gameEnd = false;
-    public GameObject endLev;
-    public GameObject image;
+    public GameObject endLev, hundredPoinUI;
 
-    public Text endTimerText;
-    public Text endScoreText;
-    public float sScore_Low;
-    public float sTime;
-    public float a;
-    public Text timerText;
-    public Text score;
-    public Text highScore;
-
-
-
-    Spwaner spa = new Spwaner();
-    _Hexagon hex = new _Hexagon();
+    public Text endTimerText, endScoreText, timerText, score, highScore;
+    public float sScore_Low, sTime, Score2;
 
     public void Start()
     {
+        hundredPoinUI.SetActive(false);
         sTime = Time.time;
-        spa.spawnRate = 0f;
-        hex.shrinkSpeed = 0f;
         endLev.SetActive(false);
         endTimerText.text = sTime.ToString("f0");
-        image.SetActive(true);
-        highScore.text = "High Score : " + ((int)PlayerPrefs.GetFloat("HighScore_Low")).ToString();
+        highScore.text = "High Score : " + ((int)PlayerPrefs.GetFloat("HighScore_Low")).ToString(); 
     }
 
 
@@ -48,6 +34,7 @@ public class GameManager_Low : MonoBehaviour
     }
     public void Update()
     {
+
         string Sc = sScore_Low.ToString("f0");
         float t = Time.time - sTime;
         string sC = sScore_Low.ToString();
@@ -57,18 +44,16 @@ public class GameManager_Low : MonoBehaviour
         timerText.text = min + ":" + sec;
         score.text = Sc;
 
+
     }
     public void scoreInc()
     {
         sScore_Low = sScore_Low + 2f;
-        a = a + 2f;
-
+        Score2 = Score2 + 2f;
     }
 
     private void Restart()
     {
-        spa.spawnRate = 0f;
-        hex.shrinkSpeed = 0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Out()
@@ -104,8 +89,8 @@ public class GameManager_Low : MonoBehaviour
         endScoreText.text = "Score = " + sC;
 
     }
-    public void activateImage()
+    /*public void activateImage()
     {
         image.SetActive(true);
-    }
+    }*/
 }
