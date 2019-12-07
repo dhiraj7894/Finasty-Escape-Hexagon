@@ -23,6 +23,7 @@ public class _Hexagon : MonoBehaviour
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
         if (transform.localScale.x < 0.05f)
         {
+            FindObjectOfType<Spawner_1>().Score2();
             FindObjectOfType<GameManager_Low>().scoreInc();
             Destroy(gameObject);
         }

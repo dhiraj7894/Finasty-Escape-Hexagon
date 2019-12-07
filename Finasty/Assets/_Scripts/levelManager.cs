@@ -32,6 +32,7 @@ public class levelManager : MonoBehaviour
     }
     public void startClick()
     {
+        FindObjectOfType<GameManager_Low>().setTrigger();
         _Manu.SetActive(false);
         _Player.SetActive(true);
         _GameLevel.SetActive(true);

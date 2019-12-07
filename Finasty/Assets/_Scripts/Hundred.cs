@@ -4,39 +4,24 @@ using UnityEngine;
 
 public class Hundred : MonoBehaviour
 {
-    public bool destroyOnAwake, findChild = false;
-    public float awakeDestroyDelay;
+    public Rigidbody2D rb;
+    public float shrinkSpeed = 3f;
+    GameManager_Low gM;
 
-    public string nameChild;
     // Start is called before the first frame update
-    void Awake()
+    public void Start()
     {
-        if (destroyOnAwake)
-        {
-            if (findChild)
-            {
-                Destroy(transform.Find(nameChild).gameObject);
-            }
-        }
-        else
-        {
-            Destroy(gameObject, awakeDestroyDelay);
-        }
+        transform.localScale =Vector3.one;
     }
 
     // Update is called once per frame
-    void DestroyChildGameObject()
+    public void Update()
     {
-        if (transform.Find(nameChild).gameObject != null)
-            Destroy(transform.Find(nameChild).gameObject);
-    }
-    void DisableChildGameObject()
-    {
-        if (transform.Find(nameChild).gameObject.activeSelf == true)
-            transform.Find(nameChild).gameObject.SetActive(false);
-    }
-     void DestroyGameObject()
-    {
-        Destroy(gameObject);
+        transform.localScale += Vector3.one * shrinkSpeed * Time.deltaTime;
+        if (transform.localScale.x > 5f)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
