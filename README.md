@@ -28,7 +28,7 @@ Download Finasty for free on your Android Phone or Tablet! Share your high score
 
 #High-Quality graphics with awesome, futuristic sound effects
 
-Download the apk Game : http://bit.ly/2JVVb96
+# Download the apk Game : http://bit.ly/2JVVb96
 
 Note : Game is under development so there is lot's of bugs.
 
