@@ -14,14 +14,18 @@ Red - 3 points
 Download Finasty for free on your Android Phone or Tablet! Share your high score on Instagram, Facebook or Youtube and tag me in your post. I look forward to challenging future Finasty champions!
 
 #grtevolution
+
 #finastytheescapehexagon
 
 
 Top features:
 
 #Easy to learn and play
+
 #Endless Hexagon challenges
+
 #Free to play
+
 #High-Quality graphics with awesome, futuristic sound effects
 
 Download the apk Game : http://bit.ly/2JVVb96
