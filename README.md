@@ -18,7 +18,7 @@ Download Finasty for free on your Android Phone or Tablet! Share your high score
 #finastytheescapehexagon
 
 
-Top features:
+# Top features:
 
 #Easy to learn and play
 
