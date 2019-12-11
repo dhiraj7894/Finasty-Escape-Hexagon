@@ -6,7 +6,7 @@ public class _Hexagon : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float shrinkSpeed=3f;
-    GameManager_Low gM;
+    GameManagerGame gM;
     public float Score;
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class _Hexagon : MonoBehaviour
         if (transform.localScale.x < 0.05f)
         {
             FindObjectOfType<Spawner_1>().Score2();
-            FindObjectOfType<GameManager_Low>().scoreInc();
+            FindObjectOfType<GameManagerGame>().scoreInc();
             Destroy(gameObject);
         }
 

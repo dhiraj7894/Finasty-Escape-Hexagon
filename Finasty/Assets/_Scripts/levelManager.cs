@@ -17,7 +17,7 @@ public class levelManager : MonoBehaviour
     //Restart the Game
     public void lowClickRestart()
     {
-        FindObjectOfType<GameManager_Low>().endGame();
+        FindObjectOfType<GameManagerGame>().endGame();
     }
     //Quit from the game
     public void quitButton()
@@ -32,10 +32,13 @@ public class levelManager : MonoBehaviour
     }
     public void startClick()
     {
-        FindObjectOfType<GameManager_Low>().setTrigger();
         _Manu.SetActive(false);
         _Player.SetActive(true);
         _GameLevel.SetActive(true);
+    }
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Game");
     }
 
     /*
@@ -47,10 +50,7 @@ public class levelManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Game");
     }
-    public void loadNewLevel_1()
-    {
-        StartCoroutine(LoadScene());
-    }
+
 
     IEnumerator homeBtn()
     {

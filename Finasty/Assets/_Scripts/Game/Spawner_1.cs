@@ -11,7 +11,7 @@ public class Spawner_1 : MonoBehaviour
     float nextTimeToSpawn = 0f;
     public float timer = 0.5f,Score_1;
 
-    GameManager_Low gML = new GameManager_Low();
+    GameManagerGame gML = new GameManagerGame();
     private void Start()
     {
         spwanRate = 0.5f;

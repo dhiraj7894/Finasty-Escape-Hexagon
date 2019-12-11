@@ -6,7 +6,7 @@ public class Hundred : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float shrinkSpeed = 3f;
-    GameManager_Low gM;
+    GameManagerGame gM;
 
     // Start is called before the first frame update
     public void Start()
