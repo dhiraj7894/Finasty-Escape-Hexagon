@@ -19,10 +19,10 @@ Download Finasty for free on your Android Phone or Tablet! Share your high score
 
 Top features:
 
->>> Easy to learn and play
->>> Endless Hexagon challenges
->>> Free to play
->>> High-Quality graphics with awesome, futuristic sound effects
+>> Easy to learn and play
+>> Endless Hexagon challenges
+>> Free to play
+>> High-Quality graphics with awesome, futuristic sound effects
 
 Download the apk Game : http://bit.ly/2JVVb96
 Note : Game is under development so there is lot's of bugs.
