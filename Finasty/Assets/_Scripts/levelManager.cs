@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class levelManager : MonoBehaviour
 {
     //public Animator trasnitionAnim, trasnitionAnim2;
-    public GameObject _Manu, _Player, _GameLevel;
+    public GameObject _Manu, _Player, _GameLevel, Player1, Player2, Player3;
 
     public void Start()
     {
         _Manu.SetActive(true);
         _Player.SetActive(false);
         _GameLevel.SetActive(false);
+        Player1.SetActive(false);
+        Player2.SetActive(false);
+        Player3.SetActive(false);
     }
     //Restart the Game
     public void lowClickRestart()
@@ -30,15 +33,34 @@ public class levelManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
     }
-    public void startClick()
+    public void startClick_1()
     {
         _Manu.SetActive(false);
         _Player.SetActive(true);
         _GameLevel.SetActive(true);
+        Player1.SetActive(true);
+    }
+    public void startClick_2()
+    {
+        _Manu.SetActive(false);
+        _Player.SetActive(true);
+        _GameLevel.SetActive(true);
+        Player2.SetActive(true);
+    }
+    public void startClick_3()
+    {
+        _Manu.SetActive(false);
+        _Player.SetActive(true);
+        _GameLevel.SetActive(true);
+        Player3.SetActive(true);
     }
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
+    }
+    public void Loadlogine()
+    {
+        SceneManager.LoadScene("_login");
     }
 
     /*

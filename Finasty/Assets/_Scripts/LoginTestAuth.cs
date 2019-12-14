@@ -19,13 +19,11 @@ public class LoginTestAuth : MonoBehaviour
         {
             if (success)
             {
-                Debug.Log("Logged in Successfully");
-
+                loginText.text = "Press Start !!";
             }
             else
             {
-                Debug.Log("FAILED TO LOGIN");
-                loginText.text = "FAILED TO LOGIN";
+                loginText.text = "FAILED TO LOGIN !!";
             }
         });
     }

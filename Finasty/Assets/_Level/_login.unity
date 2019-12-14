@@ -880,8 +880,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 84dc5351c6db94f46abc7cc1330c7a05, type: 3}
-    m_FontSize: 239
+    m_Font: {fileID: 12800000, guid: de06456f5238d3342be25b8313ec69eb, type: 3}
+    m_FontSize: 209
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -972,6 +972,9 @@ MonoBehaviour:
   _Manu: {fileID: 0}
   _Player: {fileID: 0}
   _GameLevel: {fileID: 0}
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  Player3: {fileID: 0}
 --- !u!4 &686335816
 Transform:
   m_ObjectHideFlags: 0
@@ -1449,6 +1452,9 @@ MonoBehaviour:
   _Manu: {fileID: 0}
   _Player: {fileID: 0}
   _GameLevel: {fileID: 0}
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  Player3: {fileID: 0}
 --- !u!1 &872718779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7927,13 +7933,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 84dc5351c6db94f46abc7cc1330c7a05, type: 3}
-    m_FontSize: 196
+    m_Font: {fileID: 12800000, guid: de06456f5238d3342be25b8313ec69eb, type: 3}
+    m_FontSize: 172
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

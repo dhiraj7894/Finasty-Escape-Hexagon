@@ -9,20 +9,23 @@ public class GameManagerGame : MonoBehaviour
 {
     bool gameEnd = false;
     public bool isRunning;
-    public GameObject endLev;
-    public Text endTimerText, endScoreText, timerText, score, highScore;
+    public GameObject endLev, Player2, Player3;
+    public Text endTimerText, endScoreText, timerText, score, highScore, scoreUpdate;
     float  startTime, stopTime, sTime;
     int sScore_Low;
+    int HexDead = 0;
     public string leaderboard, achievement, achievementRe;
 
     public void Start()
     {
+        Player2.SetActive(false);
+        Player3.SetActive(false);
         TimerReset();
         isRunning = false;
         sTime = Time.time;
         endLev.SetActive(false);
         endTimerText.text = sTime.ToString("f0");
-        highScore.text = "High Score : " + ((int)PlayerPrefs.GetInt("HighScore_Low")).ToString(); 
+        highScore.text = "High Score : " + ((int)PlayerPrefs.GetInt("HighScore_Low")).ToString();
     }
 
     public void endGame()
@@ -48,16 +51,45 @@ public class GameManagerGame : MonoBehaviour
         {
             timerText.text = min.ToString() + ":" + sec.ToString();
         }
-        if (sScore_Low == 100)
+        if (PlayerPrefs.GetInt("HighScore_Low") == 100)
         {
-            Social.ReportProgress(achievementRe, 200f, (bool success)=> { 
+            Social.ReportProgress(GPGSlds.achievement_collect_100_score, 200f, (bool success)=> { 
             
             });
         }
+        if (PlayerPrefs.GetInt("HighScore_Low") == 500)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_500_score, 200f, (bool success) => {
+
+            });
+        }
+        if (PlayerPrefs.GetInt("HighScore_Low") == 1000)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_1000_score, 200f, (bool success) => {
+
+            });
+        }
+        if (PlayerPrefs.GetInt("HighScore_Low") == 1500)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_1500_score, 200f, (bool success) => {
+
+            });
+        }
+        if (PlayerPrefs.GetInt("HexDead") > 40) {
+            Player2.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("HexDead") > 100)
+        {
+            Player3.SetActive(true);
+        }
+
     }
     public void scoreInc()
     {
         sScore_Low = sScore_Low + 2;
+        HexDead++;
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_hex_finasty_unlocked, 1, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_ultra_finasty_unlocked, 1, null);
     }
     public void TimerStart()
     {
@@ -93,7 +125,7 @@ public class GameManagerGame : MonoBehaviour
 
     public void Out()
     {
-        PlayGamesPlatform.Instance.IncrementAchievement(achievement, 10, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_xp_bonus, 10, null);
 
         foreach (Transform tr in endLev.transform.parent)
         {
@@ -109,6 +141,10 @@ public class GameManagerGame : MonoBehaviour
             PlayerPrefs.SetInt("HighScore_Low", sScore_Low);
             highScore.text = "High Score : " + sScore_Low.ToString("f0");     
         }
+        if (HexDead > PlayerPrefs.GetInt("HexDead",0))
+        {
+            PlayerPrefs.SetInt("HexDead", HexDead);
+        }
         //Highscore-end
         sTime = stopTime + (Time.time - startTime);
         int min = (int)sTime / 60;
@@ -117,21 +153,16 @@ public class GameManagerGame : MonoBehaviour
         if (isRunning){
             endTimerText.text = "Survival Time : " + min.ToString() + ":" + sec.ToString();
         }
-        //endTimerText.text = "Time = " + min + ":" + sec;
         string sC = sScore_Low.ToString("f0");
         endScoreText.text = "Score = " + sC;
 
-        if (PlayerPrefs.GetInt("HighScore_Low", 0) == 0)
-        {
-            return;
-        }
-
-        Social.ReportScore(PlayerPrefs.GetInt("HighScore_Low", 1), leaderboard, (bool success) => {
+        Social.ReportScore(sScore_Low, GPGSlds.leaderboard_high_score, (bool success) => {
             if (success)
             {
-                PlayerPrefs.SetInt("HighScore_Low", 0);
+                //Do not do anything.
             }
         });
+
 
     }
     public void AchivementPanel()
@@ -141,8 +172,6 @@ public class GameManagerGame : MonoBehaviour
 
     public void LeaderBoard()
     {
-
-
         Social.ShowLeaderboardUI();
     }
 }

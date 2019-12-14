@@ -24,9 +24,14 @@
 
 public static class GPGSlds
 {
-        public const string achievement_achivement_regular = "CgkIv7mYhewTEAIQAQ"; // <GPGSID>
-        public const string leaderboard_highscore = "CgkIv7mYhewTEAIQAw"; // <GPGSID>
-        public const string achievement_increment_achievement = "CgkIv7mYhewTEAIQAg"; // <GPGSID>
+        public const string achievement_collect_1500_score = "CgkI2aSKj-QQEAIQBw"; // <GPGSID>
+        public const string achievement_xp_bonus = "CgkI2aSKj-QQEAIQAg"; // <GPGSID>
+        public const string achievement_collect_1000_score = "CgkI2aSKj-QQEAIQBg"; // <GPGSID>
+        public const string leaderboard_high_score = "CgkI2aSKj-QQEAIQAw"; // <GPGSID>
+        public const string achievement_hex_finasty_unlocked = "CgkI2aSKj-QQEAIQCA"; // <GPGSID>
+        public const string achievement_collect_500_score = "CgkI2aSKj-QQEAIQBQ"; // <GPGSID>
+        public const string achievement_ultra_finasty_unlocked = "CgkI2aSKj-QQEAIQCQ"; // <GPGSID>
+        public const string achievement_collect_100_score = "CgkI2aSKj-QQEAIQAQ"; // <GPGSID>
 
 }
 
