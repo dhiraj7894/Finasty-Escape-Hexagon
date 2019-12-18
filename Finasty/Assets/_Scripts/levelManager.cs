@@ -10,6 +10,7 @@ public class levelManager : MonoBehaviour
 
     public void Start()
     {
+        FindObjectOfType<AdManager>().RequestVideo();
         _Manu.SetActive(true);
         _Player.SetActive(false);
         _GameLevel.SetActive(false);

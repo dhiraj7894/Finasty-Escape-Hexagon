@@ -7,9 +7,9 @@ using UnityEngine.SocialPlatforms;
 
 public class GameManagerGame : MonoBehaviour
 {
-    bool gameEnd = false;
+    bool gameEnd = false, StatsOpen;
     public bool isRunning;
-    public GameObject endLev, Player2, Player3;
+    public GameObject endLev, Player2, Player3, Stats;
     public Text endTimerText, endScoreText, timerText, score, highScore, scoreUpdate;
     float  startTime, stopTime, sTime;
     int sScore_Low;
@@ -18,6 +18,7 @@ public class GameManagerGame : MonoBehaviour
 
     public void Start()
     {
+        Stats.SetActive(false);
         Player2.SetActive(false);
         Player3.SetActive(false);
         TimerReset();
@@ -173,5 +174,19 @@ public class GameManagerGame : MonoBehaviour
     public void LeaderBoard()
     {
         Social.ShowLeaderboardUI();
+    }
+
+    public void statsOpen()
+    {
+        if (StatsOpen == false)
+        {
+            StatsOpen = true;
+            Stats.SetActive(true);
+
+        }
+        else {
+            StatsOpen = false;
+            Stats.SetActive(false);
+        }
     }
 }

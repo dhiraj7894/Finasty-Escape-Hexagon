@@ -8,7 +8,7 @@ public class LoginTestAuth : MonoBehaviour
     public Text loginText;
     void Start()
     {
-
+        FindObjectOfType<AdManager>().RequestVideo();
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
         // recommended for debugging:

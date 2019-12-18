@@ -9,7 +9,7 @@ public class Spawner_1 : MonoBehaviour
     public float spwanRate = 0.5f;
     public GameObject hexagon1, hexagon2, hexagon3, hexagon4, hexagon5, hexagon6, HundredUI;
     float nextTimeToSpawn = 0f;
-    public float timer = 0.5f,Score_1;
+    public float Score_1;
 
     GameManagerGame gML = new GameManagerGame();
     private void Start()
@@ -19,8 +19,7 @@ public class Spawner_1 : MonoBehaviour
     }
     void Update()
     { 
-        timer = timer + (1f / 25000f);
-        spwanRate = (spwanRate + (1f/80000f));
+        spwanRate = (spwanRate + (1f/100000f));
         //Debug.Log(timer);
         if (Time.time > nextTimeToSpawn)
         {
@@ -34,24 +33,16 @@ public class Spawner_1 : MonoBehaviour
                     Instantiate(hexagon2, Vector3.zero, Quaternion.identity);
                     break;
                 case 3:
-                    if (timer > 0.55f) {
-                        Instantiate(hexagon3, Vector3.zero, Quaternion.identity);
-                    }
+                    Instantiate(hexagon3, Vector3.zero, Quaternion.identity);
                     break;
                 case 4:
-                    if (timer > 0.57f) {
-                        Instantiate(hexagon4, Vector3.zero, Quaternion.identity);
-                    }
+                    Instantiate(hexagon4, Vector3.zero, Quaternion.identity);
                     break;
                 case 5:
-                    if (timer > 0.59f) {
-                        Instantiate(hexagon5, Vector3.zero, Quaternion.identity);
-                    }
+                    Instantiate(hexagon5, Vector3.zero, Quaternion.identity);
                     break;
                 case 6:
-                    if (timer > 0.62f) {
-                        Instantiate(hexagon6, Vector3.zero, Quaternion.identity);
-                    }
+                    Instantiate(hexagon6, Vector3.zero, Quaternion.identity);
                         break;
 
             }

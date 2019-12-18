@@ -1,6 +1,4 @@
-﻿/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using GoogleMobileAds.Api;
 
 public class AdManager : MonoBehaviour
@@ -9,17 +7,17 @@ public class AdManager : MonoBehaviour
 
     public BannerView bannerView;
     public InterstitialAd video;
-     private string appID = "ca-app-pub-7362258985735994~2376665647";
+    private string appID = "ca-app-pub-7362258985735994~2376665647";
 
     //originalID
-     //private string bannerID = "ca-app-pub-7362258985735994/2572417825";
-     //private string videoID = "ca-app-pub-7362258985735994/1499009304";
+    //private string bannerID = "ca-app-pub-7362258985735994/2572417825";
+    //private string videoID = "ca-app-pub-7362258985735994/1499009304";
 
     //Test Purpose
-     private string bannerID = "ca-app-pub-3940256099942544/6300978111";
-     private string videoID = "ca-app-pub-3940256099942544/1033173712";
+        private string bannerID = "ca-app-pub-3940256099942544/6300978111";
+        private string videoID = "ca-app-pub-3940256099942544/1033173712";
 
-   private void Awake()
+    private void Awake()
     {
         if (instance == null)
         {
@@ -34,6 +32,7 @@ public class AdManager : MonoBehaviour
     {
         MobileAds.Initialize(appID);
         RequestVideo();
+        RequestBanner();
     }
     public void RequestBanner()
     {
@@ -67,6 +66,6 @@ public class AdManager : MonoBehaviour
         }
     }
 
-    
+
 }
-*/
+

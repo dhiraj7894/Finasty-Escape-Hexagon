@@ -13,7 +13,7 @@ public class socialMedia : MonoBehaviour
     public void openInsta()
     {
         
-        Application.OpenURL("https://www.instagram.com/grtevolution/");
+        Application.OpenURL("https://www.instagram.com/great_photographer_dhiraj/");
     }
     public void openYT()
     {
