@@ -8,6 +8,10 @@ public class LoginTestAuth : MonoBehaviour
     public Text loginText;
     void Start()
     {
+        Authentcate();
+    }
+    void Authentcate()
+    {
         FindObjectOfType<AdManager>().RequestVideo();
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
@@ -15,7 +19,7 @@ public class LoginTestAuth : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true;
         // Activate the Google Play Games platform
         PlayGamesPlatform.Activate();
-        Social.localUser.Authenticate(success =>
+        Social.localUser.Authenticate((bool success) =>
         {
             if (success)
             {

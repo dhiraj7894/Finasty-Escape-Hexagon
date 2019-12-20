@@ -89,8 +89,8 @@ public class GameManagerGame : MonoBehaviour
     {
         sScore_Low = sScore_Low + 2;
         HexDead++;
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_hex_finasty_unlocked, 1, null);
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_ultra_finasty_unlocked, 1, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_hex_finasty_unlocked, 10, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_ultra_finasty_unlocked, 10, null);
     }
     public void TimerStart()
     {
@@ -156,15 +156,11 @@ public class GameManagerGame : MonoBehaviour
         }
         string sC = sScore_Low.ToString("f0");
         endScoreText.text = "Score = " + sC;
-
-        Social.ReportScore(sScore_Low, GPGSlds.leaderboard_high_score, (bool success) => {
-            if (success)
-            {
-                //Do not do anything.
-            }
-        });
-
-
+        //Post the Score
+        if (sScore_Low > PlayerPrefs.GetInt("HighScore_Low", 0))
+        {
+            postScore();
+        }
     }
     public void AchivementPanel()
     {
@@ -188,5 +184,16 @@ public class GameManagerGame : MonoBehaviour
             StatsOpen = false;
             Stats.SetActive(false);
         }
+    }
+    public void postScore()
+    {
+
+            Social.ReportScore(PlayerPrefs.GetInt("HighScore_Low"), GPGSlds.leaderboard_high_score, (bool success) => {
+                if (success)
+                {
+                    //Do not do anything.
+                }
+            });
+        
     }
 }
