@@ -51,31 +51,7 @@ public class GameManagerGame : MonoBehaviour
         if (isRunning)
         {
             timerText.text = min.ToString() + ":" + sec.ToString();
-        }
-        if (PlayerPrefs.GetInt("HighScore_Low") == 100)
-        {
-            Social.ReportProgress(GPGSlds.achievement_collect_100_score, 200f, (bool success)=> { 
-            
-            });
-        }
-        if (PlayerPrefs.GetInt("HighScore_Low") == 500)
-        {
-            Social.ReportProgress(GPGSlds.achievement_collect_500_score, 200f, (bool success) => {
-
-            });
-        }
-        if (PlayerPrefs.GetInt("HighScore_Low") == 1000)
-        {
-            Social.ReportProgress(GPGSlds.achievement_collect_1000_score, 200f, (bool success) => {
-
-            });
-        }
-        if (PlayerPrefs.GetInt("HighScore_Low") == 1500)
-        {
-            Social.ReportProgress(GPGSlds.achievement_collect_1500_score, 200f, (bool success) => {
-
-            });
-        }
+        } 
         if (PlayerPrefs.GetInt("HexDead") > 40) {
             Player2.SetActive(true);
         }
@@ -83,14 +59,15 @@ public class GameManagerGame : MonoBehaviour
         {
             Player3.SetActive(true);
         }
+        AchievementUpdate();
 
     }
     public void scoreInc()
     {
         sScore_Low = sScore_Low + 2;
         HexDead++;
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_hex_finasty_unlocked, 10, null);
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_ultra_finasty_unlocked, 10, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_hex_finasty_unlocked, 5, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSlds.achievement_ultra_finasty_unlocked, 5, null);
     }
     public void TimerStart()
     {
@@ -195,5 +172,32 @@ public class GameManagerGame : MonoBehaviour
                 }
             });
         
+    }
+    public void AchievementUpdate()
+    {
+        if (PlayerPrefs.GetInt("HighScore_Low") == 100)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_100_score, 200f, (bool success) => {
+
+            });
+        }
+        if (PlayerPrefs.GetInt("HighScore_Low") == 500)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_500_score, 200f, (bool success) => {
+
+            });
+        }
+        if (PlayerPrefs.GetInt("HighScore_Low") == 1000)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_1000_score, 200f, (bool success) => {
+
+            });
+        }
+        if (PlayerPrefs.GetInt("HighScore_Low") == 1500)
+        {
+            Social.ReportProgress(GPGSlds.achievement_collect_1500_score, 200f, (bool success) => {
+
+            });
+        }
     }
 }

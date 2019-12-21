@@ -21,14 +21,16 @@ public class _Hexagon : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        updateScale();
+    }
+    void updateScale()
+    {
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
         if (transform.localScale.x < 0.05f)
         {
-
             FindObjectOfType<Spawner_1>().Score2();
             FindObjectOfType<GameManagerGame>().scoreInc();
             Destroy(gameObject);
         }
-
     }
 }
